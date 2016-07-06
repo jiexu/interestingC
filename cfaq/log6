@@ -1,0 +1,32 @@
+arrays and pointers
+
+6.5:
+        extern char *getpass();
+        char str[10];
+        str = getpass("get password"); /* this is wrong here as array can not be assigned. */
+
+        second-class citizens
+
+6.6:
+	this is however valid:
+	int f(char str[])
+	{
+		if(str[0] == '\0')
+			str = "none";
+		...
+	}
+	str is a function parameter, so its declaration is rewritten by the compiler to a pointer
+
+
+6.7:
+	char a[] = "hello, world\n"; /* this is not a assignment, but a initilization */
+
+
+
+
+6.17:
+	int realarray[10];
+	int *array = &realarray[-1];
+	Then we can treat array as if it were started from 1 instead of 0.
+	so instead of saying realarray[0], we can say array[1]
+

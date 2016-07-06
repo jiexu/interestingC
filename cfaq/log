@@ -1,0 +1,62 @@
+1.21 array of N pointers to functions returning pointers to functions returning pointers to char
+        functions returning pointers to char: typedef char * (*func)()
+        pointers to functions returning pointers to char: func
+        functions returning pointers to functions returning pointers to char: typedef func (*funcf)()
+        N pointers .... : funcf* p[N]
+
+
+        pointer to char: typedef char *pc
+        functions returning pointers to char: typedef pc fpc()
+        pointer to above: typedef fpc *pfpc
+        function returnning .. : typedef pfpc fpfpc()
+        pointer to .. : typedef fpfpc *pfpfpc
+        pfpfpc a[N]
+
+        char *(*(*a[N])())()
+
+        char * a[N]; /* array of pointers to char */
+        char (* a)[N]; /* pointers to char array N */
+        
+
+
+        [] and () bind more tightly than *.
+        
+        precedence: Postfix, unary, Multiplicative, additive, shift, rational, equality, bitwise AND, XOR, OR, logical AND, XOR, OR, conditional, Assignment, comma.
+
+char *(*pfpc)()
+        pointer to functions returning pointer to char
+         
+
+
+1.22:
+
+
+1.24:
+        sizeof operates at compile time. extern int array[]; can not be sizeof at compiling time 
+
+        companion variable: 
+        manifest constant
+        use some sentinel value at the end of the array so that code can determine the end without an explicit size indication
+
+
+1.29:
+        identifier has three attributes: scope, namespace and linkage
+        there are four different kinds of namespaces:
+                * labels (i.e. goto targets)
+                * tags (name of structure, unions, and enumerations, these are not separated)
+                * structure/union members (one namespace per structure or union)
+                * everything else (functions, variables, typedef names, enumeration constants), referred as ordinary identifiers
+        
+        linkage of identifiers:
+                * external: global, non-static variables and functions across all source files
+                * internal: static variables and functions with file scope
+                * no linkage: local variables, and also things like typedef names and enumeration constants
+
+        rules:
+                * ^_[A-Z] and ^__* are always reserved
+                * all identifiers beginning with an underscore are reserveed for ordinary identifiers with file scope
+
+1.30:
+        Uninitilized variables with STATIC duration (those declared outside of functions and those declared with storage class static) are guaranteed to start out as ZERO.
+
+

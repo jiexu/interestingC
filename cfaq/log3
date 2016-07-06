@@ -1,0 +1,21 @@
+3.1:
+        a[i] = i++; /* should not work since the value of i is not determined. */
+
+3.2:
+        a = i++ * i++; /* value of a could be undifined */
+        the behavior of code which contains multiple ambiguous side effects has always been undefined.
+
+3.4: 
+        f() + g() * h()
+        there is not stardard specification saying anything about which function should be evaluated first in this expression.
+        f() + (g() * h()) /* () here will not affect the order of function evaluation */
+        
+3.5: 
+        && and || will ensure the LHS will be evaluted first to utilizet e the short-circuiting exceptions.
+        if (g() || h()) /* g() should be evaluted first * /
+
+3.6: 
+        it is safe to assume the RHS won't be evaluted if the LHS determines the && or || result
+
+3.7:
+        the order of evaluation of the arguments to a function call is unspecified.

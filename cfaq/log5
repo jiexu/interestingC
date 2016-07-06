@@ -1,0 +1,7 @@
+5.1:
+        NULL pointer is not necessarily represented as 0 in the code, but it is the comiler's job to expands to an implementation-defined null pointer constant
+
+5.15:
+        when you want a null pointer constant in source code, use "0" or "NULL"
+        if the usage of "0" or "NULL" is an argument in a function call, cast it to the pointer type expected by the function being called.
+

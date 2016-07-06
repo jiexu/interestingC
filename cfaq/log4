@@ -1,0 +1,14 @@
+4.9:
+        int i = 1;
+        incme((double*)&i);  /*try to emulate reference passing, but not valid */
+
+4.10:
+        passing in const value of pointers
+
+        extern int f(int *);
+
+        f((int[]){}) can be used instead of "int a = 5; f(&a)"
+
+4.11:
+
+        c does NOT have "pass by reference"
